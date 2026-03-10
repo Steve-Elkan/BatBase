@@ -1,0 +1,345 @@
+CREATE DATABASE BatBase;
+USE BatBase;
+CREATE TABLE VirusList(
+virus_id int,
+virus_name varchar(225),
+virus_type varchar(225),
+disease_name varchar(225),
+symptoms varchar(225),
+bat_id1 int,
+bat_id2 int);
+
+INSERT INTO VirusList
+VALUES (1,"Rabies virus","ssRNA-ns","Rabies infection","fever, headache, hydrophobia, phonophobia, excess salivation, muscle spasms, paralysis, and mental confusion",20,14),
+(2,"SARS-CoV","ssRNA-ps","Severe acute respiratory syndrome","respiratory illness, headache, fever, chills, muscle aches",6,NULL),
+(3,"SARS-CoV-2","ssRNA-ps","Severe acute respiratory syndrome coronavirus 2","respiratory illness, headache, fever, chills, muscle aches",6,NULL),
+(4,"Ebola","ssRNA-ns","Ebola virus disease, Ebola hemorrhagic fever","fever, headache, muscle pain, chills, internal bleeding, coughing blood",1,NULL),
+(5,"MERS-CoV","ssRNA-ps","Middle East respiratory syndrome","fever, cough, shortness of breath, nausea, vomiting, diarrhoea","6",NULL),
+(6,"Nipah virus","ssRNA-ns","Nipah virus infection","headache, fever, muscle aches, vomiting, sore throat",1,NULL),
+(7,"Marburg virus","ssRNA-ns","Marburg Hemorrhagic fever","high fever, severe headache, severe malaise, muscle aches, nausea, vomiting, diarrhoea ",1,NULL);
+
+
+CREATE TABLE BatSpecies(
+Bat_id int,
+common_name varchar(225),
+family varchar(225),
+super_family varchar(225),
+suborder varchar(225),
+location varchar(225),
+virus_id1 int,
+virus_id2 int,
+virus_id3 int);
+
+INSERT INTO BatSpecies
+VALUES (1,"Fruit bat(mega bats)","Pteropodidae","Pteropodoidea","Yinpterochiroptera/Megachiroptera","Southeast Asia, Africa, Australia, Indian Ocean islands",4,6,7),
+(2,"False vampire bats","Megadermatidae","Rhinolophoidea","Microchiroptera","Southern Asia, Central Africa, Australia",NULL,NULL,NULL),
+(3,"Kitti's hog-nosed bat","Craseonycteridae","Rhinolophoidea","Microchiroptera","western Thailand, southeast Myanmar",NULL,NULL,NULL),
+(4,"Mouse-tailed bats","Rhinopomatidae","Rhinolophoidea","Microchiroptera","North Africa to Thailand and Sumatra",NULL,NULL,NULL),
+(5,"Old World leaf-nosed bats","Hipposideridae","Rhinolophoidea","Microchiroptera","Southwest Asia, Africa, Europe",NULL,NULL,NULL),
+(6,"Horseshoe bats","Rhinolophidae","Rhinolophoidea","Microchiroptera","Africa, Australia, Asia, Europe, and Oceania",2,3,5),
+(7,"Long winged bat","Miniopteridae","Yangochiroptera","Microchiroptera","Southern Europe, Africa and Madagascar, Asia, Australia",NULL,NULL,NULL),
+(8,"Fisherman bats","Noctilionidae","Yangochiroptera","Microchiroptera","Mexico to Argentina and Caribbean islands",NULL,NULL,NULL),
+(9,"Pteronotus","Mormoopidae","Yangochiroptera","Microchiroptera","Americas from the Southwestern United States to Southeastern Brazil",NULL,NULL,NULL),
+(10,"New Zealand short-tailed bats","Mystacinidae","Yangochiroptera","Microchiroptera","New Zealand",NULL,NULL,NULL),
+(11,"Disc-winged bats","Thyropteridae","Yangochiroptera","Microchiroptera","Central and South America",NULL,NULL,NULL),
+(12,"Smoky bats","Furipteridae","Yangochiroptera","Microchiroptera"," Central and South America",NULL,NULL,NULL),
+(13,"Mormoops","Mormoopidae","Yangochiroptera","Microchiroptera","Americas from the Southwestern United States to Southeastern Brazil",NULL,NULL,NULL),
+(14,"Vampire bats/New World leaf-nosed bats","Phyllostomidae","Yangochiroptera","Microchiroptera","Southern North America to South America",1,NULL,NULL),
+(15,"Free-tailed bats","Molossidae","Yangochiroptera","Microchiroptera","every continent except Antarctica",NULL,NULL,NULL),
+(16,"Sac-winged bats","Emballonuridae","Yangochiroptera","Microchiroptera","southern Asia, Australia and South Pacific islands",NULL,NULL,NULL),
+(17,"Sucker-footed bats","Myzopodidae","Yangochiroptera","Microchiroptera","Madagascar",NULL,NULL,NULL),
+(18,"Taphozous","Emballonuridae","Yangochiroptera","Microchiroptera","Southern Asia, Australia and South Pacific islands",NULL,NULL,NULL),
+(19,"Funnel-eared bats","Natalidae","Yangochiroptera","Microchiroptera"," Mexico to Brazil and the Caribbean islands",NULL,NULL,NULL),
+(20,"Vesper bats","Vespertilionidae","Yangochiroptera","Microchiroptera","North America",1,NULL,NULL);
+
+
+
+CREATE TABLE GeneList1(
+Gene_id int,
+gene_name varchar(225),
+description varchar(225),
+location varchar(225),
+seq_accesion varchar(225),
+MIM int,
+virus_id int);
+
+INSERT INTO GeneList1
+VALUES 
+(1	,"NFKB1	","nuclear factor kappa B subunit 1	","4q24	","NC_000004.12	",164011	,1),
+(2	,"BCL2	","BCL2 apoptosis regulator	","18q21.33	","NC_000018.10	",151430	,1),
+(3	,"MAPK1	","mitogen-activated protein kinase 1	","22q11.22	","NC_000022.11	",176948	,1),
+(4	,"STAT1	","signal transducer and activator of transcription 1	","2q32.2	","NC_000002.12	",600555	,1),
+(5	,"PTK2	","protein tyrosine kinase 2	","8q24.3	","NC_000008.11	",600758	,1),
+(6	,"IL2	","interleukin 2	","4q27	","NC_000004.12	",147680	,1),
+(7	,"TLR3	","toll like receptor 3	","4q35.1	","NC_000004.12	",603029	,1),
+(8	,"HSPA4	","heat shock protein family A (Hsp70) member 4	","5q31.1	","NC_000005.10	",601113	,1),
+(9	,"RIGI	","RNA sensor RIG-I	","9p21.1	","NC_000009.12	",609631	,1),
+(10	,"IRF3	","interferon regulatory factor 3	","19q13.33	","NC_000019.10	",603734	,1),
+(11	,"NCAM1	","neural cell adhesion molecule 1	","11q23.2	","NC_000011.10	",116930	,1),
+(12	,"TFRC	","transferrin receptor	","3q29	","NC_000003.12	",190010	,1),
+(13	,"NGFR	","nerve growth factor receptor	","17q21.33	","NC_000017.11	",162010	,1),
+(14	,"CHRNA7	","cholinergic receptor nicotinic alpha 7 subunit	","15q13.3	","NC_000015.10	",118511	,1),
+(15	,"BST2	","bone marrow stromal cell antigen 2	","19p13.11	","NC_000019.10	",600534	,1),
+(16	,"RAB5A	","RAB5A, member RAS oncogene family	","3p24.3	","NC_000003.12	",179512	,1),
+(17	,"RAB7A	","RAB7A, member RAS oncogene family	","3q21.3	","NC_000003.12	",602298	,1),
+(18	,"TSG101	","tumor susceptibility 101	","11p15.1	","NC_000011.10	",601387	,1),
+(19	,"TRIM25	","tripartite motif containing 25	","17q22	","NC_000017.11	",600453	,1),
+(20	,"STAT2	","signal transducer and activator of transcription 2	","12q13.3	","NC_000012.12	",600556	,1),
+(21	,"IKBKE	","inhibitor of nuclear factor kappa B kinase subunit epsilon	","1q32.1	","NC_000001.11	",605048	,1),
+(22	,"IRF7	","interferon regulatory factor 7	","11p15.5	","NC_000011.10	",605047	,1),
+(23	,"PCBP2	","poly(rC) binding protein 2	","12q13.13	","NC_000012.12	",601210	,1),
+(24	,"STAU1	","staufen double-stranded RNA binding protein 1	","20q13.13	","NC_000020.11	",601716	,1),
+(25	,"DYNLL1	","dynein light chain LC8-type 1	","12q24.31	","NC_000012.12	",601562	,1),
+(26	,"RPL9	","ribosomal protein L9	","4p14	","NC_000004.12	",603686	,1),
+(27	,"AAK1	","AP2 associated kinase 1	","2p13.3	","NC_000002.12	",616405	,1),
+(28	,"CH25H	","cholesterol 25-hydroxylase	","10q23.31	","NC_000010.11	",604551	,1);
+
+
+CREATE TABLE GeneList2(
+Gene_id int,
+gene_name varchar(225),
+description varchar(225),
+location varchar(225),
+seq_accesion varchar(225),
+MIM int,
+virus_id int);
+
+INSERT INTO GeneList2
+VALUES 
+(1	,"TP53"	,"tumor protein p53	","17p13.1	","NC_000017.11	","191170	",2),
+(2	,"NLRP3"	,"NLR family pyrin domain containing 3	","1q44	","NC_000001.11	","606416	",2),
+(3	,"STAT3"	,"signal transducer and activator of transcription 3	","17q21.2"	,"NC_000017.11"	,102582	,2),
+(4	,"KRAS"	,"KRAS proto-oncogene, GTPase	","12p12.1	","NC_000012.12	",190070	,2),
+(5	,"APOE"	,"apolipoprotein E	","19q13.32	","NC_000019.10	",107741	,2),
+(6	,"FTO"	,"FTO alpha-ketoglutarate dependent dioxygenase	","16q12.2	","NC_000016.10	",610966	,2),
+(7	,"PTEN"	,"phosphatase and tensin homolog	","10q23.31	","NC_000010.11	",601728	,2),
+(8	,"CDKN2A"	,"cyclin dependent kinase inhibitor 2A	","9p21.3	","NC_000009.12	",600160	,2),
+(9	,"MECP2"	,"methyl-CpG binding protein 2	","Xq28	","NC_000023.11	",300005	,2),
+(10	,"FGFR3"	,"fibroblast growth factor receptor 3	","4p16.3	","NC_000004.12	",134934	,2),
+(11	,"BRAF"	,"B-Raf proto-oncogene, serine/threonine kinase	","7q34	","NC_000007.14	",164757	,2),
+(12	,"TP63"	,"tumor protein p63	","3q28	","NC_000003.12	",603273	,2),
+(13	,"HLA-DRB1"	,"major histocompatibility complex, class II, DR beta 1	","6p21.32	","NC_000006.12	",142857	,2),
+(14	,"UGT1A1"	,"UDP glucuronosyltransferase family 1 member A1	","2q37.1	","NC_000002.12	",191740	,2),
+(15	,"CRP"	,"C-reactive protein	","1q23.2	","NC_000001.11	",123260	,2),
+(16	,"PTPN11"	,"protein tyrosine phosphatase non-receptor type 11	","12q24.13	","NC_000012.12	",176876	,2),
+(17	,"CTNNB1"	,"catenin beta 1	","3p22.1	","NC_000003.12	",116806	,2),
+(18	,"AKT1"	,"AKT serine/threonine kinase 1	","14q32.33	","NC_000014.9	",164730	,2),
+(19	,"MLH1"	,"mutL homolog 1	","3p22.2	","NC_000003.12	",120436	,2),
+(20	,"EP300"	,"E1A binding protein p300	","22q13.2	","NC_000022.11	",602700	,2),
+(21	,"IL6"	,"interleukin 6	","7p15.3	","NC_000007.14	",147620	,2),
+(22	,"IGF2"	,"insulin like growth factor 2	","11p15.5	","NC_000011.10	",147470	,2),
+(23	,"APOB"	,"apolipoprotein B	","2p24.1	","NC_000002.12	",107730	,2),
+(24	,"TNF"	,"tumor necrosis factor	","6p21.33	","NC_000006.12	",191160	,2),
+(25	,"HLA-B"	,"major histocompatibility complex, class I, B	","6p21.33	","NC_000006.12	",142830	,2),
+(26	,"ABCB1"	,"ATP binding cassette subfamily B member 1	","7q21.12	","NC_000007.14	",171050	,2),
+(27	,"IL6R"	,"interleukin 6 receptor	","1q21.3	","NC_000001.11	",147880	,2),
+(28	,"EDN1"	,"endothelin 1	","6p24.1	","NC_000006.12	",131240	,2),
+(29	,"TGFB1"	,"transforming growth factor beta 1	","19q13.2	","NC_000019.10	",190180	,2),
+(30	,"MAP2K1"	,"mitogen-activated protein kinase kinase 1	","15q22.31	","NC_000015.10	",176872	,2),
+(31	,"LEPR"	,"leptin receptor	","1p31.3	","NC_000001.11	",601007	,2),
+(32	,"VEGFA"	,"vascular endothelial growth factor A	","6p21.1	","NC_000006.12	",192240	,2),
+(33	,"FASLG"	,"Fas ligand	","1q24.3	","NC_000001.11	",134638	,2),
+(34	,"TERT"	,"telomerase reverse transcriptase	","5p15.33	","NC_000005.10	",187270	,2),
+(35	,"IL10"	,"interleukin 10	","1q32.1	","NC_000001.11	",124092	,2),
+(36	,"ACE"	,"angiotensin I converting enzyme	","17q23.3	","NC_000017.11	",106180	,2),
+(37	,"EGFR"	,"epidermal growth factor receptor	","7p11.2	","NC_000007.14	",131550	,2),
+(38	,"FOXP3"	,"forkhead box P3	","Xp11.23	","NC_000023.11	",300292	,2),
+(39	,"HLA-A"	,"major histocompatibility complex, class I, A	","6p22.1	","NC_000006.12	",142800	,2),
+(40	,"TLR4"	,"toll like receptor 4	","9q33.1	","NC_000009.12	",603030	,2),
+(41	,"IL33"	,"interleukin 33	","9p24.1	","NC_000009.12	",608678	,2),
+(42	,"GATA3"	,"GATA binding protein 3	","10p14	","NC_000010.11	",131320	,2),
+(43	,"HRAS"	,"HRas proto-oncogene, GTPase	","11p15.5	","NC_000011.10	",190020	,2),
+(44	,"MTOR"	,"mechanistic target of rapamycin kinase	","1p36.22	","NC_000001.11	",601231	,2),
+(45	,"CFTR"	,"CF transmembrane conductance regulator	","7q31.2	","NC_000007.14	",602421	,2),
+(46	,"CXCL8"	,"C-X-C motif chemokine ligand 8	","4q13.3	","NC_000004.12	",146930	,2),
+(47	,"MMP9"	,"matrix metallopeptidase 9	","20q13.12	","NC_000020.11	",120361	,2),
+(48	,"IFNG"	,"interferon gamma	","12q15	","NC_000012.12	",147570	,2),
+(49	,"POLG"	,"DNA polymerase gamma, catalytic subunit	","15q26.1	","NC_000015.10	",174763	,2),
+(50	,"NFKB1"	,"nuclear factor kappa B subunit 1	","4q24	","NC_000004.12	",164011	,2);
+
+
+CREATE TABLE GeneList3(
+Gene_id int,
+gene_name varchar(225),
+description varchar(225),
+location varchar(225),
+seq_accesion varchar(225),
+MIM int,
+virus_id int);
+
+INSERT INTO GeneList3
+VALUES 
+(1	,"EGFR 	","epidermal growth factor receptor	","7p11.2	","NC_000007.14	",131550	,3),
+(2	,"ACE2	","angiotensin converting enzyme 2	","Xp22.2	","NC_000023.11	",300335	,3),
+(3	,"IL6	","interleukin 6	","7p15.3	","NC_000007.14	",147620	,3),
+(4	,"VEGFA	","vascular endothelial growth factor A	","6p21.1	","NC_000006.12	",192240	,3),
+(5	,"CRP	","C-reactive protein	","1q23.2	","NC_000001.11	",123260	,3),
+(6	,"IL1B	","interleukin 1 beta	","2q14.1	","NC_000002.12	",147720	,3),
+(7	,"TLR4	","toll like receptor 4	","9q33.1	","NC_000009.12	",603030	,3),
+(8	,"IL17A	","interleukin 17A	","6p12.2	","NC_000006.12	",603149	,3),
+(9	,"CCL2	","C-C motif chemokine ligand 2	","17q12	","NC_000017.11	",158105	,3),
+(10	,"GSK3B	","glycogen synthase kinase 3 beta	","3q13.33	","NC_000003.12	",605004	,3),
+(11	,"KDR	","kinase insert domain receptor	","4q12	","NC_000004.12	",191306	,3),
+(12	,"AGTR1	","angiotensin II receptor type 1	","3q24	","NC_000003.12	",106165	,3),
+(13	,"BSG	","basigin (Ok blood group)	","19p13.3	","NC_000019.10	",109480	,3),
+(14	,"RIGI	","RNA sensor RIG-I	","9p21.1	","NC_000009.12	",609631	,3),
+(15	,"IL2RA	","interleukin 2 receptor subunit alpha	","10p15.1	","NC_000010.11	",147730	,3),
+(16	,"TMPRSS2	","transmembrane serine protease 2	","21q22.3	","NC_000021.9	",602060	,3),
+(17	,"ADAM17	","ADAM metallopeptidase domain 17	","2p25.1	","NC_000002.12	",603639	,3),
+(18	,"IFIH1	","interferon induced with helicase C domain 1	","2q24.2	","NC_000002.12	",606951	,3),
+(19	,"CTSB	","cathepsin B	","8p23.1	","NC_000008.11	",116810	,3),
+(20	,"MIR200C	","microRNA 200c	","12p13.31	","NC_000012.12	",612092	,3),
+(21	,"IL7	","interleukin 7	","8q21.13	","NC_000008.11	",146660	,3),
+(22	,"KNG1	","kininogen 1	","3q27.3	","NC_000003.12	",612358	,3),
+(23	,"TNNC1	","troponin C1, slow skeletal and cardiac type	","3p21.1	","NC_000003.12	",191040	,3),
+(24	,"MIR15B	","microRNA 15b	","3q25.33	","NC_000003.12	",619572	,3),
+(25	,"USP13	","ubiquitin specific peptidase 13	","3q26.33	","NC_000003.12	",603591	,3),
+(26	,"MIR28	","microRNA 28	","3q28	","NC_000003.12	",612154	,3);
+
+
+CREATE TABLE GeneList4(
+Gene_id int,
+gene_name varchar(225),
+description varchar(225),
+location varchar(225),
+seq_accesion varchar(225),
+MIM int,
+virus_id int);
+
+INSERT INTO GeneList4
+VALUES
+(1,	"STAT1", "signal transducer and activator of transcription 1", "2q32.2",	"NC_000002.12",	600555,	6),
+(2,	"CXCL10",	"C-X-C motif chemokine ligand 10", "4q21.1", "NC_000004.12",	147310, 6),
+(3,	"STAT2", "signal transducer and activator of transcription 2",	"12q13.3",	"NC_000012.12", 600556,	6),
+(4,	"LGALS1", "galectin 1",	"22q13.1", "NC_000022.11",	150570,	6),
+(5,	"CTSB", "cathepsin B", "8p23.1", "NC_000008.11",	116810,	6),
+(6,	"EFNB2", "ephrin B2", "13q33.3", "NC_000013.11",	600527,	6);
+
+
+CREATE TABLE GeneList5(
+Gene_id int,
+gene_name varchar(225),
+description varchar(225),
+location varchar(225),
+seq_accesion varchar(225),
+MIM int,
+virus_id int);
+
+INSERT INTO GeneList5
+VALUES
+(1,	"HLA-DRB1",	"major histocompatibility complex, class II, DR beta 1", "6p21.32",	"NC_000006.12",	142857,	5),
+(2,	"APOB",	"apolipoprotein B",	"2p24.1",	"NC_000002.12",	107730,	5),
+(3,	"EGFR",	"epidermal growth factor receptor",	"7p11.2",	"NC_000007.14",	131550,	5),
+(4,	"ACE",	"angiotensin I converting enzyme",	"17q23.32", "NC_000019.12",	603030,	5),
+(6,	"PRNP",	"prion protein (Kanno blood group)", "20p13",	"NC_000020.11",	176640,	5),
+(7,	"DPP4",	"dipeptidyl peptidase 4", "2q24.2", "NC_000002.12",	102720,	5),
+(8,	"HLA-DQB1", "microRNA 146a", "5q33.3", "NC_000005.10", 610566, 5),
+(10, "IDH1", "isocitrate dehydrogenase (NADP(+)) 1", "2q34", "NC_000002.12",	147700,	5),
+(11, "MEFV", "MEFV innate immunity regulator, pyrin", "16p13.3", "NC_000016.10",	608107,	5),
+(12, "IL13", "interleukin 13",	"5q31.1",	"NC_000005.10",	147683,	5),
+(13, "HSPA5", "heat shock protein family A (Hsp70) member 5",	"9q33.3",	"NC_000009.12",	138120,	5),
+(14, "BECN1", "beclin 1", "17q21.31", "NC_000017.11", 604378,	5),
+(15, "ADA",	"adenosine deaminase",	"20q13.12",	"NC_000020.11",	608958,	5),
+(16, "CEACAM", "CEA cell adhesion molecule 5",	"19q13.2", "NC_000019.10",	114890,	5),
+(17, "SKP2", "S-phase kinase associated protein 2",	"5p13.2", "NC_000005.10",	601436,	5),
+(18, "UBB",	"ubiquitin B",	"17p11.2",	"NC_000017.11",	191339,	5),
+(19, "RAPGEF3",	"Rap guanine nucleotide exchange factor 3",	"12q13.11",	"NC_000012.12",	606057,	5),
+(20, "MIR146B",	"microRNA 146b", "10q24.32", "NC_000010.11", 610567, 5),
+(21, "HABP2", "hyaluronan binding protein 2", "10q25.3", "NC_000010.11", 603924,	5),
+(22, "TMPRSS11A", "transmembrane serine protease 11A",	"4q13.2", "NC_000004.12", 611704,	5),
+(23, "LOC117152610", "DPP4 promoter region", "2q", "NC_000002.12", 0, 5),
+(24, "LOC117152611", "DPP4 -4.2 kb glucocorticoid response element", "2q",	"NC_000002.12", 0, 5);
+
+
+
+CREATE TABLE GeneList6(
+Gene_id int,
+gene_name varchar(225),
+description varchar(225),
+location varchar(225),
+seq_accesion varchar(225),
+MIM int,
+virus_id int);
+
+INSERT INTO GeneList6
+VALUES
+(1,	"TLR4",	"toll like receptor 4",	"9q33.1",	"NC_000009.12",	603030,	4),
+(2,	"IL18",	"interleukin 18",	"11q23.1",	"NC_000011.10",	600953,	4),
+(3,	"HMOX1",	"heme oxygenase 1",	"22q12.3",	"NC_000022.11",	141250,	4),
+(4,	"STAT1",	"signal transducer and activator of transcription 1",	"2q32.2",	"NC_000002.12",	600555,	4),
+(5,	"MBL2",	"mannose binding lectin 2",	"10q21.1",	"NC_000010.11",	154545,	4),
+(6,	"JUN",	"Jun proto-oncogene, AP-1 transcription factor subunit",	"1p32.1",	"NC_000001.11",	165160,	4),
+(7,	"CD209",	"CD209 molecule",	"19p13.2",	"NC_000019.10",	604672,	4),
+(9,	"POU5F1",	"POU class 5 homeobox 1",	"6p21.33",	"NC_000006.12",	164177,	4),
+(10,	"RIGI",	"RNA sensor RIG-I",	"9p21.1",	"NC_000009.12",	609631,	4),
+(11,	"BST2",	"bone marrow stromal cell antigen 2",	"19p13.11",	"NC_000019.10",	600534,	4),
+(12,	"NPC1",	"NPC intracellular cholesterol transporter 1",	"18q11.2",	"NC_000018.10",	607623,	4),
+(13,	"SOCS3",	"suppressor of cytokine signaling 3",	"17q25.3",	"NC_000017.11",	604176,	4),
+(14,	"ADAR",	"adenosine deaminase RNA specific",	"1q21.3",	"NC_000001.11",	146920,	4),
+(15,	"SOCS1",	"suppressor of cytokine signaling 1",	"16p13.13",	"NC_000016.10",	603597,	4),
+(16,	"CTSB",	"cathepsin B",	"8p23.1",	"NC_000008.11",	116810,	4),
+(17,	"IRF3",	"interferon regulatory factor 3",	"19q13.33",	"NC_000019.10",	603734,	4),
+(18,	"AXL", "receptor tyrosine kinase",	"19q13.2",	"NC_000019.10",	109135,	4),
+(19,	"SFTPD",	"surfactant protein D",	"10q22.3",	"NC_000010.11",	178635,	4),
+(20,	"TOP1.00",	"DNA topoisomerase I",	"20q12",	"NC_000020.11",	126420,	4),
+(21,	"CD163",	"CD163 molecule",	"12p13.31",	"NC_000012.12",	605545,	4),
+(22,	"CTSL",	"cathepsin L",	"9q21.33",	"NC_000009.12",	116880,	4),
+(23,	"TMPRSS2",	"transmembrane serine protease 2",	"21q22.3",	"NC_000021.9", 602060,	4),
+(24,	"XBP1",	"X-box binding protein 1",	"22q12",	"NC_000022.11",	194355,	4),
+(25,	"HAVCR1",	"hepatitis A virus cellular receptor 1",	"5q33.3",	"NC_000005.10",	606518,	4),
+(26,	"KPNA2",	"karyopherin subunit alpha 2",	"17q24.2",	"NC_000017.11",	600685,	4),
+(27,	"ERN1.00",	"endoplasmic reticulum to nucleus signaling 1",	"17q23.3",	"NC_000017.11",	604033,	4),
+(28,	"NEDD4",	"NEDD4 E3 ubiquitin protein ligase",	"15q21.3",	"NC_000015.10",	602278,	4),
+(29,	"IQGAP1",	"IQ motif containing GTPase activating protein 1",	"15q26.1",	"NC_000015.10",	603379,	4),
+(30,	"MAVS",	"mitochondrial antiviral signaling protein",	"20p13",	"NC_000020.11",	609676,	4),
+(31,	"ISG15",	"ISG15 ubiquitin like modifier",	"1p36.33",	"NC_000001.11",	147571,	4),
+(32,	"MIR142",	"microRNA 142",	"17q22",	"NC_000017.11",	615657,	4),
+(33,	"CIITA",	"class II major histocompatibility complex transactivator",	"16p13.13",	"NC_000016.10",	600005,	4),
+(34,	"TSG101",	"tumor susceptibility 101",	"11p15.1",	"NC_000011.10",	601387,	4),
+(35,	"ATP1A1",	"ATPase Na+/K+ transporting subunit alpha 1",	"1p13.1",	"NC_000001.11",	182310,	4),
+(36,	"IFITM3",	"interferon induced transmembrane protein 3",	"11p15.5",	"NC_000011.10",	605579,	4),
+(37,	"ILF3",	"interleukin enhancer binding factor 3",	"19p13.2",	"NC_000019.10",	603182,	4),
+(38,	"RUVBL1",	"RuvB like AAA ATPase 1",	"3q21.3",	"NC_000003.12",	603449,	4),
+(39,	"CLEC4M",	"C-type lectin domain family 4 member M",	"19p13.2",	"NC_000019.10",	605872,	4),
+(40,	"RUVBL2",	"RuvB like AAA ATPase 2",	"19q13.33",	"NC_000019.10",	604788,	4),
+(41,	"IL3",	"interleukin 3",	"5q31.1",	"NC_000005.10",	147740,	4),
+(42,	"IFNL1",	"interferon lambda 1",	"19q13.2",	"NC_000019.10",	607403,	4),
+(43,	"PIK3C3",	"phosphatidylinositol 3-kinase catalytic subunit type 3",	"18q12.3",	"NC_000018.10",	602609,	4),
+(44,	"STAU1",	"staufen double-stranded RNA binding protein 1",	"20q13.13",	"NC_000020.11",	601716,	4),
+(45,	"SRPK1",	"SRSF protein kinase 1",	"6p21.31",	"NC_000006.12",	601939,	4),
+(46,	"SMYD3",	"SET and MYND domain containing 3",	"1q44",	"NC_000001.",	608783,	4),
+(47,	"ZC3HAV1",	"zinc finger CCCH-type containing, antiviral 1",	"7q34",	"NC_000007.14",	607312,	4),
+(48,	"DYNLL1",	"dynein light chain LC8-type 1",	"12q24.31",	"NC_000012.12",	601562,	4),
+(49,	"IFITM1",	"interferon induced transmembrane protein 1",	"11p15.5",	"NC_000011.10",	604456, 4),
+(50,	"PRKRA",	"protein activator of interferon induced protein kinase EIF2AK2",	"2q31.2",	"NC_000002.12",	603424,	4);
+
+
+CREATE TABLE GeneList7(
+Gene_id int,
+gene_name varchar(225),
+description varchar(225),
+location varchar(225),
+seq_accesion varchar(225),
+MIM int,
+virus_id int);
+
+INSERT INTO GeneList7
+VALUES
+(1,	"MBL2",	"mannose binding lectin 2",	"10q21.1",	"NC_000010.11",	154545,	7),
+(2,	"RIGI",	"RNA sensor RIG-I",	"9p21.1",	"NC_000009.12",	609631,	7),
+(3,	"ADAR",	"adenosine deaminase RNA specific",	"1q21.3",	"NC_000001.11",	146920,	7),
+(4,	"CD209",	"CD209 molecule",	"19p13.2",	"NC_000019.10",	604672,	7),
+(5,	"AXL",	"AXL receptor tyrosine kinase",	"19q13.2",	"NC_000019.10",	109135,	7),
+(6,	"BST2",	"bone marrow stromal cell antigen 2",	"19p13.11",	"NC_000019.10",	600534,	7),
+(7,	"CTSB",	"cathepsin B",	"8p23.1",	"NC_000008.11",	116810,	7),
+(8,	"TMPRSS2",	"transmembrane serine protease 2",	"21q22.3",	"NC_000021.9",	602060,	7),
+(9,	"XBP1",	"X-box binding protein 1",	"22q12",	"NC_000022.11",	194355,	7),
+(10,	"ERN1.00",	"endoplasmic reticulum to nucleus signaling 1",	"17q23.3",	"NC_000017.11",	604033,	7),
+(11,	"NEDD4",	"NEDD4 E3 ubiquitin protein ligase",	"15q21.3",	"NC_000015.10",	602278,	7),
+(12,	"HABP2",	"hyaluronan binding protein 2",	"10q25.3",	"NC_000010.11",	603924,	7),
+(13,	"HAVCR1",	"hepatitis A virus cellular receptor 1",	"5q33.3",	"NC_000005.10",	606518,	7),
+(14,	"TSG101",	"tumor susceptibility 101",	"11p15.1",	"NC_000011.10",	601387,	7),
+(15,	"CTSL",	"cathepsin L",	"9q21.33",	"NC_000009.12",	116880,	7),
+(16,	"TYRO3",	"TYRO3 protein tyrosine kinase",	"15q15.1",	"NC_000015.10",	600341,	7),
+(17,	"ERV3-1",	"endogenous retrovirus group 3 member 1, envelope",	"7q11.21",	"NC_000007.14",	131170,	7),
+(18,	"CCZ1",	"CCZ1 homolog, vacuolar protein trafficking and biogenesis associated",	"7p22.1",	"NC_000007.14",	620660,	7);
